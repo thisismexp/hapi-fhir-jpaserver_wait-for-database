@@ -31,3 +31,8 @@ COPY catalina.properties /usr/local/tomcat/conf/catalina.properties
 COPY server.xml /usr/local/tomcat/conf/server.xml
 
 CMD ["catalina.sh", "run"]
+
+# Add docker-compose-wait tool -------------------
+ENV WAIT_VERSION 2.9.0
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/$WAIT_VERSION/wait /wait
+RUN chmod +x /wait
